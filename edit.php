@@ -16,17 +16,19 @@
 
 <h1 class="text-center">Edit Record</h1>
 <form method="post" action="editpost.php">
+    <!-- Send over hidden id -->
+    <input type="hidden" name="id" value="<?php echo $attendee['attendee_id']; ?>" />
     <div class="form-group">
         <label for="firstname">First Name</label>
         <input type="text" class="form-control" value="<?php echo $attendee['firstname']; ?>" id="firstname" name="firstname"> 
     </div>
     <div class="form-group">
         <label for="lastname">Last Name</label>
-        <input type="text" class="form-control" value="<?php echo $attendee['lastname']; ?>" id="firstname"  id="lastname" name="lastname"> 
+        <input type="text" class="form-control" value="<?php echo $attendee['lastname']; ?>" id="lastname" name="lastname"> 
     </div>
     <div class="form-group">
         <label for="dob">Date Of Birth</label>
-        <input type="text" class="form-control" value="<?php echo $attendee['dateofbirth']; ?>" id="firstname"  id="dob" name="dob"> 
+        <input type="text" class="form-control" value="<?php echo $attendee['dateofbirth']; ?>" id="dob" name="dob"> 
     </div>
     <div class="form-group">
         <label for="specialty">Area of Expertise</label>
@@ -38,7 +40,7 @@
     </div>
     <div class="form-group">
         <label for="email">Email Address</label>
-        <input type="email" class="form-control" value="<?php echo $attendee['emailaddress']; ?>" id="firstname" id="email" name="email"
+        <input type="email" class="form-control" value="<?php echo $attendee['emailaddress']; ?>" id="email" name="email" 
         aria-describedby="emailHelp" >
         <small id="emailHelp" class="form-text text-muted">
             We'll never share your email with anyone
@@ -46,7 +48,7 @@
     </div>
     <div class="form-group">
         <label for="phone">Contact Number</label>
-        <input type="text" class="form-control"  value="<?php echo $attendee['contactnumber']; ?>"id="firstname" id="phone" name="phone"
+        <input type="text" class="form-control"  value="<?php echo $attendee['contactnumber']; ?>" id="phone" name="phone"
         aria-describedby="phoneHelp" >
         <small id="phoneHelp" class="form-text text-muted">
             We'll never share your number with anyone

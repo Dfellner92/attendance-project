@@ -53,5 +53,27 @@
             $result = $this->db->query($sql);
             return $result;
         }
+
+        public function updateAttendee($id, $fname, $lname, $dob, $email, $contact, $specialty){
+            try{
+                $sql = "UPDATE `attendee` SET `attendee_id`=:id, `firstname`=:fname, `lastname`=:lname, `dateofbirth`=:dob,
+                `emailaddress`=:email, `contactnumber`=:contact, `specialty_id`=:specialty WHERE attendee_id=:id";
+                $statement = $this->db->prepare($sql);
+
+                $statement->bindparam(':id', $id);
+                $statement->bindparam(':fname', $fname);
+                $statement->bindparam(':lname', $lname);
+                $statement->bindparam(':dob', $dob);
+                $statement->bindparam(':email', $email);
+                $statement->bindparam(':contact', $contact);
+                $statement->bindparam(':specialty', $specialty);
+
+                $statement->execute();
+                return true;
+            }catch (PDOException $e) {
+                echo $e->getMessage();
+                return false; 
+            }   
+        }
     };
 ?>
