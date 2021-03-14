@@ -18,7 +18,11 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script>
             $( function() {
-                $( "#dob" ).datepicker();
+                $( "#dob" ).datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: "-100:+0"
+                });
             });
         </script>
     </body>
