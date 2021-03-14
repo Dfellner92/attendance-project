@@ -7,7 +7,7 @@
 
         if(!isset($_GET['id']))
         {
-            echo 'error';
+            include "includes/errormessage.php";
         } else {
             $id = $_GET['id'];
             $attendee = $crud->readAttendeeDetails($id);

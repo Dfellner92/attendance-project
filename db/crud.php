@@ -34,24 +34,52 @@
         }
 
         public function readAttendees(){
-            $sql = "SELECT * FROM `attendee` a inner join specialties s on a.specialty_id = s.specialty_id";
-            $result = $this->db->query($sql);
-            return $result;
+            try{
+                $sql = "SELECT * FROM `attendee` a inner join specialties s on a.specialty_id = s.specialty_id";
+                $result = $this->db->query($sql);
+                return $result;
+            } catch (PDOException $e){
+                echo $e->getMessage();
+                return false;
+            }
         }
 
         public function readAttendeeDetails($id){
-            $sql = "select * from attendee a inner join specialties s on a.specialty_id = s.specialty_id where attendee_id = :id";
-            $statement = $this->db->prepare($sql);
-            $statement->bindparam(':id', $id);
-            $statement->execute();
-            $result = $statement->fetch();
-            return $result;
+            try{
+                $sql = "select * from attendee a inner join specialties s on a.specialty_id = s.specialty_id where attendee_id = :id";
+                $statement = $this->db->prepare($sql);
+                $statement->bindparam(':id', $id);
+                $statement->execute();
+                $result = $statement->fetch();
+                return $result;
+            } catch (PDOException $e){
+                echo $e->getMessage();
+                return false;
+            }
+        }
+
+        public function deleteAttendee($id){
+            try{
+                $sql = "delete from attendee where attendee_id =:id";
+                $statement = $this->db->prepare($sql);
+                $statement->bindparam(':id', $id);
+                $statement->execute();
+                return true;
+            } catch (PDOException $e){
+                echo $e->getMessage();
+                return false;
+            }
         }
 
         public function readSpecialties(){
-            $sql = "SELECT * FROM `specialties`";
-            $result = $this->db->query($sql);
-            return $result;
+            try{
+                $sql = "SELECT * FROM `specialties`";
+                $result = $this->db->query($sql);
+                return $result;
+            } catch (PDOException $e){
+                echo $e->getMessage();
+                return false;
+            }
         }
 
         public function updateAttendee($id, $fname, $lname, $dob, $email, $contact, $specialty){
