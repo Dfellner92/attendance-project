@@ -1,11 +1,17 @@
 <?php 
+    // local
+    // $host = '127.0.0.1';
+    // $db = 'attendance_db';
+    // $user = 'root';
+    // $pass = '';
+    // $charset = 'utf8mb4';
 
-    $host = '127.0.0.1';
-    $db = 'attendance_db';
-    $user = 'root';
-    $pass = '';
+    $host = 'sql5.freemysqlhosting.net';
+    $db = 'sql5399136';
+    $user = 'sql5399136';
+    $pass = 'If8jc38FMH';
     $charset = 'utf8mb4';
-
+    
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
     try {
