@@ -15,8 +15,8 @@
     $isSuccess = $crud->createAttendees($fname, $lname, $dob, $email, $contact, $specialty);}
 
     if ($isSuccess) {
-        echo '<h1 class="text-center text-success">
-        You have been registered! </h1>';
+        include 'includes/successmessage.php';
+
     } else {
         include 'includes/errormessage.php';
     }

@@ -11,7 +11,6 @@
     
 
 ?>
-<br><br>
 <div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">
@@ -31,6 +30,11 @@
         </p>
     </div>
 </div>
+<br/>
+<a href="viewrecords.php" class="btn btn-info">Back</a>
+<a href="edit.php?id=<?php echo $result['attendee_id']?>" class="btn btn-warning">Edit</a>
+<a onclick="return confirm('Confirm deletion')" href="delete.php?id=<?php echo $result['attendee_id']?>" class="btn btn-danger">Del</a>
+       
 
 <?php } ?>
 <br>
